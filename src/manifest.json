@@ -3,6 +3,9 @@
   "name": "Recent Shopify Themes",
   "description": "An extension to show the most recent themes that have been previewed.",
   "options_page": "options.html",
+  "permissions": [
+    "storage"
+  ],
   "background": {
     "service_worker": "background.bundle.js"
   },

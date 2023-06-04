@@ -27,7 +27,8 @@ var compiler = webpack(config);
 
 var server = new WebpackDevServer(
   {
-    https: false,
+    server: 'https',
+    https: true,
     hot: true,
     liveReload: false,
     client: {
@@ -41,6 +42,7 @@ var server = new WebpackDevServer(
     },
     devMiddleware: {
       publicPath: `http://localhost:${env.PORT}/`,
+
       writeToDisk: true,
     },
     headers: {
