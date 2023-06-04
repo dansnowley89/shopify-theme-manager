@@ -1,14 +1,12 @@
 import React from 'react';
 // import logo from '../../assets/img/logo.svg';
 // import Greetings from '../../containers/Greetings/Greetings';
+
+import ThemeList from '../../containers/ThemeList/ThemeList';
+
 import './Popup.css';
 
 const Popup = () => {
-
-  chrome.storage.local.get(["links"]).then((result) => {
-    console.log(result);
-    console.log("Value currently is " + result.links);
-  });
 
   return (
     <div className="App">
@@ -25,35 +23,37 @@ const Popup = () => {
         >
           Learn React.
         </a> */}
-        <h1>Recent Theme Activity</h1>
-        <p>Here lies a list of recent themes that have been used.</p>
-        <ul>
-          <li>Instant 1
-            <ul>
-              <li>Preview</li>
-              <li>Customiser</li>
-            </ul>
-          </li>
-          <li>Instant 2
-            <ul>
-              <li>Preview</li>
-              <li>Customiser</li>
-            </ul>
-          </li>
-          <li>Instant 3
-            <ul>
-              <li>Preview</li>
-              <li>Customiser</li>
-            </ul>
-          </li>
-          <li>Instant 4
-            <ul>
-              <li>Preview</li>
-              <li>Customiser</li>
-            </ul>
-          </li>
-        </ul>
+
       </header>
+      <ThemeList />
+      <h1>Recent Theme Activity</h1>
+      <p>Here lies a list of recent themes that have been used.</p>
+      {/* <ul>
+        <li>Instant 1
+          <ul>
+            <li>Preview</li>
+            <li>Customiser</li>
+          </ul>
+        </li>
+        <li>Instant 2
+          <ul>
+            <li>Preview</li>
+            <li>Customiser</li>
+          </ul>
+        </li>
+        <li>Instant 3
+          <ul>
+            <li>Preview</li>
+            <li>Customiser</li>
+          </ul>
+        </li>
+        <li>Instant 4
+          <ul>
+            <li>Preview</li>
+            <li>Customiser</li>
+          </ul>
+        </li>
+      </ul> */}
     </div>
   );
 };

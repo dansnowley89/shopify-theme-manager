@@ -3164,21 +3164,12 @@ if (false) {} else {
 /*!************************************!*\
   !*** ./src/pages/Content/index.js ***!
   \************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_print__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/print */ "./src/pages/Content/modules/print.js");
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.......');
-console.log('ok?!!?!?!?!?.?!');
-(0,_modules_print__WEBPACK_IMPORTED_MODULE_0__.printLine)("Using the 'printLine' function from the Print Module");
 const themeLinks = document.querySelectorAll('.js-test-link');
-console.log(themeLinks);
 
 // Structure of links for localstorage
 const links = [{
@@ -3196,65 +3187,8 @@ for (const item of themeLinks) {
     }).then(() => {
       console.log("Value is set");
     });
-
-    //TODO: Move this to pop up.
-    // chrome.storage.local.get(["links"]).then((result) => {
-    //   console.log(result);
-    //   console.log("Value currently is " + result.links);
-    // });
   });
 }
-
-const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
-const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
-	$ReactRefreshModuleId$
-);
-
-function $ReactRefreshModuleRuntime$(exports) {
-	if (true) {
-		let errorOverlay;
-		if (true) {
-			errorOverlay = false;
-		}
-		let testMode;
-		if (typeof __react_refresh_test__ !== 'undefined') {
-			testMode = __react_refresh_test__;
-		}
-		return __react_refresh_utils__.executeRuntime(
-			exports,
-			$ReactRefreshModuleId$,
-			module.hot,
-			errorOverlay,
-			testMode
-		);
-	}
-}
-
-if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Promise) {
-	$ReactRefreshCurrentExports$.then($ReactRefreshModuleRuntime$);
-} else {
-	$ReactRefreshModuleRuntime$($ReactRefreshCurrentExports$);
-}
-
-/***/ }),
-
-/***/ "./src/pages/Content/modules/print.js":
-/*!********************************************!*\
-  !*** ./src/pages/Content/modules/print.js ***!
-  \********************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "printLine": () => (/* binding */ printLine)
-/* harmony export */ });
-/* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
-__webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
-
-const printLine = line => {
-  console.log('===> FROM THE PRINT MODULE:', line);
-};
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
@@ -11416,7 +11350,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1272bf38d5f399f12668")
+/******/ 		__webpack_require__.h = () => ("025e8acd2c27bfb0151a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
