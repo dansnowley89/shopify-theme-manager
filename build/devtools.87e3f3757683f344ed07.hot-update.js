@@ -3,9 +3,9 @@ self["webpackHotUpdatechrome_extension_boilerplate_react"]("devtools",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("025e8acd2c27bfb0151a")
+/******/ 	__webpack_require__.h = () => ("f6fb219cdc196ad58272")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=devtools.a7202cf056c54a9c6890.hot-update.js.map
+//# sourceMappingURL=devtools.87e3f3757683f344ed07.hot-update.js.map

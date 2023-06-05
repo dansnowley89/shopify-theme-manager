@@ -36802,7 +36802,8 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       console.log(result);
       console.log("Value currently is " + result.links);
       this.setState({
-        name: 'new name!'
+        name: 'new name!',
+        links: result.links
       });
     });
   }
@@ -36820,12 +36821,19 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
 
   componentDidMount() {
     this.getStoredLinks();
-  }
-  componentDidUpdate() {
-    console.log('did update');
+    console.log('this.state');
+    console.log(this.state);
+
+    // TODO update state with local storage
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+      console.log('storage listener');
+      this.getStoredLinks();
+    });
   }
   render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, this.state.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Link 1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Link 2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, this.state.links && this.state.links.map((x, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: i
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: this.clearStorage
     }, "Clear Storage"));
   }
@@ -36894,7 +36902,7 @@ const Popup = () => {
     className: "App"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
     className: "App-header"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeList__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Recent Theme Activity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Here lies a list of recent themes that have been used."));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Recent Theme Activity")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeList__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 _c = Popup;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
@@ -45992,7 +46000,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("025e8acd2c27bfb0151a")
+/******/ 		__webpack_require__.h = () => ("e073515706f63cd6023f")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -13,7 +13,8 @@ class ThemeList extends Component {
       console.log("Value currently is " + result.links);
 
       this.setState({
-        name: 'new name!'
+        name: 'new name!',
+        links: result.links
       });
     });
   }
@@ -31,20 +32,22 @@ class ThemeList extends Component {
 
   componentDidMount() {
     this.getStoredLinks();
-  }
+    console.log('this.state')
+    console.log(this.state)
 
-  componentDidUpdate() {
-    console.log('did update');
+    // TODO update state with local storage
+    chrome.storage.onChanged.addListener((changes, namespace) => {
+      console.log('storage listener');
+      this.getStoredLinks();
+    });
   }
 
   render() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        {/* <h1>{this.state.name}</h1> */}
         <ul>
-          <li>Link 1</li>
-          <li>Link 2</li>
-          <ThemeItem />
+          {this.state.links && this.state.links.map((x, i) => <ThemeItem key={i} />)}
         </ul>
 
         <button onClick={this.clearStorage}>Clear Storage</button>
