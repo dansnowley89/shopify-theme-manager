@@ -36733,9 +36733,11 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   render() {
-    console.log('this.props.itemData');
-    console.log(this.props.itemData);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, " Theme item from 'thmeitem' component.");
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Theme:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, " Preview Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: this.props.itemData.previewLink
+    }, this.props.itemData.previewLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, " Customiser Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: this.props.itemData.customiserLink
+    }, this.props.itemData.customiserLink))));
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeItem);
@@ -46000,7 +46002,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("773c5579e638c7d4ae7e")
+/******/ 		__webpack_require__.h = () => ("da597b72f5126569ae3a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
