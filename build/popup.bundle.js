@@ -36795,15 +36795,18 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   state = {
-    name: 'dev'
+    name: 'dev',
+    links: []
   };
   getStoredLinks() {
     chrome.storage.local.get(["links"]).then(result => {
       console.log(result);
       console.log("Value currently is " + result.links);
+      console.log('getStoredLinks');
+      console.log([...result.links]);
       this.setState({
         name: 'new name!',
-        links: result.links
+        links: [...result.links]
       });
     });
   }
@@ -36813,9 +36816,7 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       if (error) {
         console.error(error);
       }
-      // do something more
     });
-
     chrome.storage.sync.clear(); // callback is optional
   }
 
@@ -36823,15 +36824,14 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
     this.getStoredLinks();
     console.log('this.state');
     console.log(this.state);
-
-    // TODO update state with local storage
     chrome.storage.onChanged.addListener((changes, namespace) => {
-      console.log('storage listener');
       this.getStoredLinks();
     });
   }
   render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, this.state.links && this.state.links.map((x, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    console.log('here');
+    console.log(this.state.links);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, this.state.name, " - ", this.state.links.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, this.state.links.length > 0 && this.state.links.map((x, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: i
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: this.clearStorage
@@ -46000,7 +46000,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("e073515706f63cd6023f")
+/******/ 		__webpack_require__.h = () => ("2838d7f6064e1ddcac9f")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

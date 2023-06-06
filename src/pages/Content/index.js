@@ -13,29 +13,28 @@ const themeLinks = document.querySelectorAll('.js-test-link');
 const links = [];
 
 for (const item of themeLinks) {
+  // eslint-disable-next-line no-loop-func
   item.addEventListener('click', (e) => {
     e.preventDefault();
 
     // Get items from within current element.
     const container = e.target.parentNode;
 
-    console.log('container');
-    console.log(container);
-
-    console.log(container.querySelectorAll('.js-test-link'));
-
     // Get links
-    const links = container.querySelectorAll('.js-test-link');
+    const linksSelect = container.querySelectorAll('.js-test-link');
 
-
-    for (const link of links) {
+    for (const link of linksSelect) {
       console.log(link.getAttribute('href'));
-      // links.push()
+
+      const newLink = link.getAttribute('href');
+      links.push(newLink);
     }
 
+    console.log('links!!!');
+    console.log(links);
 
     chrome.storage.local.set({ links: links }).then(() => {
-      console.log("Value is set");
+      console.log("Links set");
     });
   });
 }
