@@ -12,16 +12,9 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 const themeLinks = document.querySelectorAll('.js-test-link');
 
 // Structure of links for localstorage
-// const links = [{
-//   link1: 'www.previewlink.com',
-//   link2: 'www.customiserlink.com'
-// },
-// {
-//   link1: 'www.previewlink.com',
-//   link2: 'www.customiserlink.com'
-// }];
-
-const links = [];
+// const themes = [{}, {}];
+const themes = [];
+let i = 0;
 for (const item of themeLinks) {
   // eslint-disable-next-line no-loop-func
   item.addEventListener('click', e => {
@@ -32,18 +25,16 @@ for (const item of themeLinks) {
 
     // Get links
     const linksSelect = container.querySelectorAll('.js-test-link');
-    for (const link of linksSelect) {
-      console.log(link.getAttribute('href'));
-      const newLink = link.getAttribute('href');
-      links.push(newLink);
-    }
-    console.log('links!!!');
-    console.log(links);
+    themes[i] = {
+      previewLink: linksSelect[0].getAttribute('href'),
+      customiserLink: linksSelect[1].getAttribute('href')
+    };
     chrome.storage.local.set({
-      links: links
+      themes: themes
     }).then(() => {
       console.log("Links set");
     });
+    i++;
   });
 }
 
@@ -84,9 +75,9 @@ if (typeof Promise !== 'undefined' && $ReactRefreshCurrentExports$ instanceof Pr
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("2838d7f6064e1ddcac9f")
+/******/ 	__webpack_require__.h = () => ("773c5579e638c7d4ae7e")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=contentScript.8e1aed47d0bc0a9ab9bd.hot-update.js.map
+//# sourceMappingURL=contentScript.a73b31328067188372d0.hot-update.js.map

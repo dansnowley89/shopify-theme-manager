@@ -5,20 +5,20 @@ class ThemeList extends Component {
 
   state = {
     name: 'dev',
-    links: []
+    themes: []
   };
 
-  getStoredLinks() {
-    chrome.storage.local.get(["links"]).then((result) => {
+  getStoredThemes() {
+    chrome.storage.local.get(["themes"]).then((result) => {
       console.log(result);
-      console.log("Value currently is " + result.links);
+      console.log("Value currently is " + result.themes);
 
-      console.log('getStoredLinks');
-      console.log([...result.links]);
+      console.log('getStoredthemes');
+      console.log([...result.themes]);
 
       this.setState({
         name: 'new name!',
-        links: [...result.links]
+        themes: [...result.themes]
       });
     });
   }
@@ -34,24 +34,24 @@ class ThemeList extends Component {
   }
 
   componentDidMount() {
-    this.getStoredLinks();
+    this.getStoredThemes();
     console.log('this.state')
     console.log(this.state)
 
     chrome.storage.onChanged.addListener((changes, namespace) => {
-      this.getStoredLinks();
+      this.getStoredThemes();
     });
   }
 
   render() {
 
     console.log('here')
-    console.log(this.state.links)
+    console.log(this.state.themes)
     return (
       <div>
-        <h1>{this.state.name} - {this.state.links.length}</h1>
+        <h1>{this.state.name} - {this.state.themes.length}</h1>
         <ul>
-          {this.state.links.length > 0 && this.state.links.map((x, i) => <ThemeItem key={i} />)}
+          {this.state.themes.length > 0 && this.state.themes.map((itemData, i) => <ThemeItem key={i} itemData={itemData} />)}
         </ul>
 
         <button onClick={this.clearStorage}>Clear Storage</button>

@@ -36732,10 +36732,9 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 
 class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
-  state = {
-    name: 'dev'
-  };
   render() {
+    console.log('this.props.itemData');
+    console.log(this.props.itemData);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, " Theme item from 'thmeitem' component.");
   }
 }
@@ -36796,17 +36795,17 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   state = {
     name: 'dev',
-    links: []
+    themes: []
   };
-  getStoredLinks() {
-    chrome.storage.local.get(["links"]).then(result => {
+  getStoredThemes() {
+    chrome.storage.local.get(["themes"]).then(result => {
       console.log(result);
-      console.log("Value currently is " + result.links);
-      console.log('getStoredLinks');
-      console.log([...result.links]);
+      console.log("Value currently is " + result.themes);
+      console.log('getStoredthemes');
+      console.log([...result.themes]);
       this.setState({
         name: 'new name!',
-        links: [...result.links]
+        themes: [...result.themes]
       });
     });
   }
@@ -36821,18 +36820,19 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   }
 
   componentDidMount() {
-    this.getStoredLinks();
+    this.getStoredThemes();
     console.log('this.state');
     console.log(this.state);
     chrome.storage.onChanged.addListener((changes, namespace) => {
-      this.getStoredLinks();
+      this.getStoredThemes();
     });
   }
   render() {
     console.log('here');
-    console.log(this.state.links);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, this.state.name, " - ", this.state.links.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, this.state.links.length > 0 && this.state.links.map((x, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      key: i
+    console.log(this.state.themes);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, this.state.name, " - ", this.state.themes.length), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, this.state.themes.length > 0 && this.state.themes.map((itemData, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      key: i,
+      itemData: itemData
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       onClick: this.clearStorage
     }, "Clear Storage"));
@@ -46000,7 +46000,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2838d7f6064e1ddcac9f")
+/******/ 		__webpack_require__.h = () => ("773c5579e638c7d4ae7e")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

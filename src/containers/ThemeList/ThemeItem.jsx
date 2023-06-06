@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 class ThemeItem extends Component {
-
-  state = {
-    name: 'dev',
-  };
-
   render() {
+
+    console.log('this.props.itemData');
+    console.log(this.props.itemData);
+
+
     return (
       <li> Theme item from 'thmeitem' component.</li>
     );
