@@ -35,8 +35,6 @@ class ThemeList extends Component {
 
   componentDidMount() {
     this.getStoredThemes();
-    console.log('this.state')
-    console.log(this.state)
 
     chrome.storage.onChanged.addListener((changes, namespace) => {
       this.getStoredThemes();
@@ -44,17 +42,14 @@ class ThemeList extends Component {
   }
 
   render() {
-
-    console.log('here')
-    console.log(this.state.themes)
     return (
       <div>
-        <h1>{this.state.name} - {this.state.themes.length}</h1>
-        <ul>
+        {/* <h1>{this.state.themes.length}</h1> Number of themes captured */}
+        <ul className="divide-y divide-gray-100">
           {this.state.themes.length > 0 && this.state.themes.map((itemData, i) => <ThemeItem key={i} itemData={itemData} />)}
         </ul>
 
-        <button onClick={this.clearStorage}>Clear Storage</button>
+        <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r mt-4" onClick={this.clearStorage}>Clear Storage</button>
       </div>
     );
   }

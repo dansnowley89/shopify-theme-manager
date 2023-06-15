@@ -1,5 +1,8 @@
 {
   "manifest_version": 3,
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+  },
   "name": "Recent Shopify Themes",
   "description": "An extension to show the most recent themes that have been previewed.",
   "options_page": "options.html",
@@ -22,13 +25,13 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*/*",
-        "https://*/*",
-        "<all_urls>"
+        "https://*.myshopify.com/*"
       ],
+      "all_frames": true,
       "js": [
         "contentScript.bundle.js"
       ],
+      "run_at": "document_end",
       "css": [
         "content.styles.css"
       ]

@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 
 import Options from './Options';
 import './index.css';
+import '../../assets/output-style.css';
+
 
 const container = document.getElementById('app-container');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript

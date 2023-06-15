@@ -32,9 +32,9 @@ var server = new WebpackDevServer(
     hot: true,
     liveReload: false,
     client: {
-      webSocketTransport: 'sockjs',
+      webSocketTransport: 'ws',
     },
-    webSocketServer: 'sockjs',
+    webSocketServer: 'ws',
     host: 'localhost',
     port: env.PORT,
     static: {
@@ -42,7 +42,6 @@ var server = new WebpackDevServer(
     },
     devMiddleware: {
       publicPath: `http://localhost:${env.PORT}/`,
-
       writeToDisk: true,
     },
     headers: {
