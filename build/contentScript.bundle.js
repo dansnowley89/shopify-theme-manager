@@ -3192,36 +3192,69 @@ function checkIframeLoaded() {
       const cards = iframeDoc.querySelectorAll('[class^="Polaris-ButtonGroup__Item"]');
       const themes = [];
       let themeCount = 0;
-      for (let i = 0; i < cards.length; i++) {
-        const buttons = cards[i].querySelectorAll('[class^="Polaris-Button"]');
-        for (const button of buttons) {
-          if (button.nodeName === "A") {
-            console.log('button');
-            console.log(button);
-            // eslint-disable-next-line no-loop-func
-            button.addEventListener('click', e => {
-              console.log('Clicked....');
-              console.log(e.target.innerText);
-              //Add customise link. 
-              if (e.target.innerText === 'Customize') {
-                // Set theme
-                themes[themeCount] = {
-                  previewLink: null,
-                  customiserLink: e.target.getAttribute('href')
-                };
-                console.log(themes);
-                chrome.storage.local.set({
-                  themes: themes
-                }).then(() => {
-                  console.log("Links set");
-                });
-              }
-              themeCount++;
+
+      // Listener for when '...' is clicked
+      const ddMenu = iframeDoc.querySelectorAll('[aria-label="Click for more theme actions"]');
+      console.log('ddMenu>>>>>>');
+      console.log(ddMenu);
+      for (let i = 0; i < ddMenu.length; i++) {
+        ddMenu[i].addEventListener('click', evnt => {
+          setTimeout(() => {
+            const previewLink = iframeDoc.querySelectorAll('[aria-label="Preview (opens in a new window)"]');
+            console.log('ddMenuItem>>');
+
+            // TODO: Add to extension for when left and right mouse button(context menu) is clicked.
+            previewLink[0].addEventListener('click', e => {
+              console.log("🖱 left click detected!");
+              console.log('preview link');
+              console.log(e);
             });
-          }
-        }
+            previewLink[0].addEventListener('contextmenu', event => {
+              console.log("🖱 right click detected!");
+            });
+            console.log(previewLink[0]);
+          }, 3000);
+        });
       }
-      ;
+
+      // Listener for customiser button click
+      // for (let i = 0; i < cards.length; i++) {
+
+      //   const buttons = cards[i].querySelectorAll('[class^="Polaris-Button"]')
+
+      //   for (const button of buttons) {
+
+      //     if (button.nodeName === "A") {
+      //       console.log('button');
+      //       console.log(button);
+      //       // eslint-disable-next-line no-loop-func
+      //       button.addEventListener('click', (e) => {
+      //         e.preventDefault();
+      //         console.log('Clicked....');
+      //         console.log(e.target.innerText);
+      //         //Add customise link. 
+      //         if (e.target.innerText === 'Customize') {
+
+      //           // Set theme
+      //           themes[themeCount] = {
+      //             previewLink: null,
+      //             customiserLink: e.target.getAttribute('href')
+      //           };
+
+      //           console.log(themes);
+
+      //           chrome.storage.local.set({ themes: themes }).then(() => {
+      //             console.log("Links set");
+      //           });
+
+      //         }
+      //         themeCount++;
+      //       });
+      //     }
+      //   }
+
+      // };
+
       return;
     }
   }
@@ -5619,7 +5652,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f5205d03883ac5402d6d")
+/******/ 		__webpack_require__.h = () => ("79070c4861236d2d5e55")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
