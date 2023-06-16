@@ -27,7 +27,6 @@ function checkIframeLoaded() {
     if (iframeDoc.readyState === 'complete') {
       console.log('HERE!!!!!');
 
-      const cards = iframeDoc.querySelectorAll('[class^="Polaris-ButtonGroup__Item"]');
       const themes = [];
 
       let themeCount = 0;
@@ -41,24 +40,23 @@ function checkIframeLoaded() {
 
       for (let i = 0; i < ddMenu.length; i++) {
 
-        ddMenu[i].addEventListener('click', (evnt) => {
+        // eslint-disable-next-line no-loop-func
+        ddMenu[i].addEventListener('click', () => {
           setTimeout(() => {
             const previewLink = iframeDoc.querySelectorAll('[aria-label="Preview (opens in a new window)"]');
-            console.log('ddMenuItem>>');
 
             // TODO: Add to extension for when left and right mouse button(context menu) is clicked.
             previewLink[0].addEventListener('click', (e) => {
-              console.log("🖱 left click detected!")
-              console.log('preview link');
-              console.log(e);
+              addToExtension(e.currentTarget.getAttribute('href'), themeCount, themes);
+              themeCount++;
             });
 
-            previewLink[0].addEventListener('contextmenu', (event) => {
-              console.log("🖱 right click detected!")
+            previewLink[0].addEventListener('contextmenu', (e) => {
+              addToExtension(e.currentTarget.getAttribute('href'), themeCount, themes);
+              themeCount++;
             })
 
-            console.log(previewLink[0]);
-          }, 3000);
+          }, 500);
         });
 
       }
@@ -104,6 +102,32 @@ function checkIframeLoaded() {
       return;
     }
 
+    function addToExtension(theme, themeCount, themeArr) {
+
+      // TODO: Take the 'theme' var, take the preview theme id and assemble it to customiser url.
+
+      // Get currently locally stored themes.
+      chrome.storage.local.get(["themes"]).then((result) => {
+        themeArr[themeCount] = {
+          previewLink: theme,
+          // customiserLink: linksSelect[1].getAttribute('href')
+        };
+
+        let combinedThemeArray;
+
+        if (result.themes && themeCount === 0) {
+          combinedThemeArray = [...themeArr, ...result.themes];
+        } else {
+          combinedThemeArray = themeArr;
+        }
+
+        chrome.storage.local.set({ themes: combinedThemeArray }).then(() => {
+          console.log("Links set");
+        });
+      });
+
+    }
+
   }
 
   // Keep checking unless found iframe
@@ -116,7 +140,7 @@ function afterLoading() {
 }
 
 
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
   checkIframeLoaded();
 });
 

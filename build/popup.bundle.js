@@ -36770,11 +36770,11 @@ class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       class: "text-sm font-semibold leading-6 text-gray-900"
     }, "Theme Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    }, "Preview Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: this.props.itemData.previewLink
+    }, this.props.itemData.previewLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
-    }, "Customiser Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-      href: this.props.itemData.customiserLink
-    }, this.props.itemData.customiserLink))))));
+    })))));
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ThemeItem);
@@ -40373,7 +40373,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("79070c4861236d2d5e55")
+/******/ 		__webpack_require__.h = () => ("7006d42b508bdb7c23e3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
