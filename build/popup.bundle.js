@@ -36770,8 +36770,10 @@ class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       class: "text-sm font-semibold leading-6 text-gray-900"
     }, "Theme Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
-    }, "Preview Link: ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-      href: this.props.itemData.previewLink
+    }, "Preview Link:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      target: "_blank",
+      href: this.props.itemData.previewLink,
+      rel: "noreferrer"
     }, this.props.itemData.previewLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
     })))));
@@ -40373,7 +40375,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c70c37a90626c963abb9")
+/******/ 		__webpack_require__.h = () => ("0ae96e99e2846833c1b4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

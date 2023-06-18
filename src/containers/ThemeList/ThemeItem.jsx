@@ -11,7 +11,8 @@ class ThemeItem extends Component {
             <div class="min-w-0 flex-auto">
               <p class="text-sm font-semibold leading-6 text-gray-900">Theme Name</p>
               <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-                Preview Link: <a href={this.props.itemData.previewLink}>{this.props.itemData.previewLink}</a>
+                Preview Link:
+                <a target="_blank" href={this.props.itemData.previewLink} rel="noreferrer">{this.props.itemData.previewLink}</a>
               </p>
               <p class="mt-1 truncate text-xs leading-5 text-gray-500">
                 {/* Customiser Link: <a href={this.props.itemData.customiserLink}>{this.props.itemData.customiserLink}</a> */}

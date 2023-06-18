@@ -3169,6 +3169,11 @@ if (false) {} else {
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
+// TODO:
+// Add name to recorded theme. 
+// Add customiser links
+// Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
+
 function checkIframeLoaded() {
   // Get a handle to the iframe element
   var iframeContainer = document.getElementById('AppFrameMain');
@@ -5634,7 +5639,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c70c37a90626c963abb9")
+/******/ 		__webpack_require__.h = () => ("0ae96e99e2846833c1b4")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

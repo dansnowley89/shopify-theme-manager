@@ -1,3 +1,8 @@
+// TODO:
+// Add name to recorded theme. 
+// Add customiser links
+// Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
+
 function checkIframeLoaded() {
   // Get a handle to the iframe element
   var iframeContainer = document.getElementById('AppFrameMain');
