@@ -36855,7 +36855,7 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
         console.error(error);
       }
     });
-    chrome.storage.sync.clear(); // callback is optional
+    // chrome.storage.sync.clear(); // callback is optional
   }
 
   componentDidMount() {
@@ -40373,7 +40373,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("eb498f724f6a7189a986")
+/******/ 		__webpack_require__.h = () => ("c70c37a90626c963abb9")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

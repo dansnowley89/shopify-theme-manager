@@ -30,7 +30,7 @@ class ThemeList extends Component {
         console.error(error);
       }
     });
-    chrome.storage.sync.clear(); // callback is optional
+    // chrome.storage.sync.clear(); // callback is optional
   }
 
   componentDidMount() {
