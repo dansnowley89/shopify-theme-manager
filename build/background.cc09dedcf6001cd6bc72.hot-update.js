@@ -3,9 +3,9 @@ self["webpackHotUpdatechrome_extension_boilerplate_react"]("background",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("0ae96e99e2846833c1b4")
+/******/ 	__webpack_require__.h = () => ("0313e5b59189c5b558bd")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=background.baf33bda2bd88c731cab.hot-update.js.map
+//# sourceMappingURL=background.cc09dedcf6001cd6bc72.hot-update.js.map

@@ -3170,7 +3170,7 @@ if (false) {} else {
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
 // TODO:
-// Add name to recorded theme. 
+// Find a way to get name and Add name to recorded theme. 
 // Add customiser links
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
 
@@ -5639,7 +5639,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0ae96e99e2846833c1b4")
+/******/ 		__webpack_require__.h = () => ("0313e5b59189c5b558bd")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

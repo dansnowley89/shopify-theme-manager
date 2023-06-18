@@ -36941,7 +36941,11 @@ const Popup = () => {
     className: "h3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "text-lg"
-  }, "Recent Theme Activity")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeList__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+  }, "Theme Activity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    href: "https://admin.shopify.com",
+    target: "_blank",
+    rel: "noreferrer"
+  }, "Select Store > ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_containers_ThemeList_ThemeList__WEBPACK_IMPORTED_MODULE_1__["default"], null));
 };
 _c = Popup;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Popup);
@@ -40375,7 +40379,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("0ae96e99e2846833c1b4")
+/******/ 		__webpack_require__.h = () => ("0313e5b59189c5b558bd")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

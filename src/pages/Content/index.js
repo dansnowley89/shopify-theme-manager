@@ -1,5 +1,5 @@
 // TODO:
-// Add name to recorded theme. 
+// Find a way to get name and Add name to recorded theme. 
 // Add customiser links
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
 
