@@ -36768,13 +36768,19 @@ class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       class: "min-w-0 flex-auto"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "text-sm font-semibold leading-6 text-gray-900"
-    }, this.props.itemData.themeHeading), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    }, this.props.itemData.storeDomain), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      class: "text font-semibold leading-6 text-gray-900"
+    }, "Theme:", this.props.itemData.themeHeading), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
-    }, "Preview Link:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       target: "_blank",
       href: this.props.itemData.previewLink,
       rel: "noreferrer"
-    }, this.props.itemData.previewLink)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    }, "Preview"), "\xA0|\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      target: "_blank",
+      href: this.props.itemData.customiserLink,
+      rel: "noreferrer"
+    }, "Customiser")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       class: "mt-1 truncate text-xs leading-5 text-gray-500"
     })))));
   }
@@ -40379,7 +40385,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("c11ffb1880d5bc85fbd1")
+/******/ 		__webpack_require__.h = () => ("6dd0e0b306b9e035ba3b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

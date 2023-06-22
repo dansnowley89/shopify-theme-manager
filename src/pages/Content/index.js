@@ -1,5 +1,5 @@
 // TODO:
-// Find a way to get name and Add name to recorded theme. 
+// Store Name
 // Add customiser links
 // Add message for AM/PMs
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
@@ -44,8 +44,23 @@ function checkIframeLoaded() {
 
             // TODO: Add to extension for when left and right mouse button(context menu) is clicked.
             previewLink[0].addEventListener('click', (e) => {
-              themeData.push(e.currentTarget.getAttribute('href'));
-              console.log('CLICK !!!!!');
+              const previewUrl = e.currentTarget.getAttribute('href');
+              themeData.push(previewUrl);
+
+              // Grab theme id to construct customiser url
+              const domainUrl = previewUrl.split('/')[2];
+
+              console.log('domainUrl');
+              console.log(domainUrl);
+
+              const urlArr = previewUrl.split('&');
+              const arrItem = urlArr.find(a => a.includes("preview_theme_id"));
+              const previewThemeId = arrItem.split('=')[1];
+              const customiserUrl = `https://${domainUrl}/admin/themes/${previewThemeId}/editor`;
+              themeData.push(customiserUrl);
+              themeData.push(domainUrl);
+
+              console.log(customiserUrl);
 
               addToExtension(themeData, themeCount, themes);
               themeCount++;
@@ -71,7 +86,9 @@ function checkIframeLoaded() {
       chrome.storage.local.get(["themes"]).then((result) => {
         themeArr[themeCount] = {
           themeHeading: theme[0],
-          previewLink: theme[1]
+          previewLink: theme[1],
+          customiserLink: theme[2],
+          storeDomain: theme[3]
           // TODO: Take the 'theme' var, take the preview theme id and assemble it to customiser url.
           // customiserLink: linksSelect[1].getAttribute('href')
         };
