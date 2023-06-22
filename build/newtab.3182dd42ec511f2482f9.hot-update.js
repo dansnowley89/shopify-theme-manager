@@ -3,9 +3,9 @@ self["webpackHotUpdatechrome_extension_boilerplate_react"]("newtab",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("0313e5b59189c5b558bd")
+/******/ 	__webpack_require__.h = () => ("82604776ab81529ad14d")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=newtab.cc09dedcf6001cd6bc72.hot-update.js.map
+//# sourceMappingURL=newtab.3182dd42ec511f2482f9.hot-update.js.map

@@ -584,6 +584,10 @@ video {
   height: 0.75rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .min-w-0 {
   min-width: 0px;
 }
