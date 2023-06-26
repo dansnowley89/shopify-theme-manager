@@ -3170,8 +3170,6 @@ if (false) {} else {
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
 // TODO:
-// Store Name
-// Add customiser links
 // Add message for AM/PMs
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
 
@@ -3181,21 +3179,15 @@ function checkIframeLoaded() {
   const iframe = iframeContainer && iframeContainer.querySelectorAll('iframe');
   if (iframe && iframe.length === 1) {
     const iframeDoc = iframe[0].contentWindow.document;
-    console.log('READY');
-
-    // if (iframeDoc.readyState === 'complete') {
-    console.log('iframeDoc ready');
+    console.log('Iframe ready');
     const themes = [];
     let themeCount = 0;
 
     // Listener for when '...' is clicked
     const ddMenu = iframeDoc.querySelectorAll('[aria-label="Click for more theme actions"]');
-    console.log('ddmenu');
-    console.log(ddMenu);
 
     // Check that not just the first theme (published one) has loaded.
     if (ddMenu && ddMenu.length > 1) {
-      console.log('in ddmenu');
       for (let i = 0; i < ddMenu.length; i++) {
         // eslint-disable-next-line no-loop-func
         ddMenu[i].addEventListener('click', () => {
@@ -3207,28 +3199,24 @@ function checkIframeLoaded() {
             const themeHeading = ddMenu[i].closest('li').querySelector('h3').innerText;
             themeData.push(themeHeading);
 
-            // TODO: Add to extension for when left and right mouse button(context menu) is clicked.
+            // Consider left & right mouse btn click.
             previewLink[0].addEventListener('click', e => {
               const previewUrl = e.currentTarget.getAttribute('href');
               themeData.push(previewUrl);
 
               // Grab theme id to construct customiser url
               const domainUrl = previewUrl.split('/')[2];
-              console.log('domainUrl');
-              console.log(domainUrl);
               const urlArr = previewUrl.split('&');
               const arrItem = urlArr.find(a => a.includes("preview_theme_id"));
               const previewThemeId = arrItem.split('=')[1];
               const customiserUrl = `https://${domainUrl}/admin/themes/${previewThemeId}/editor`;
               themeData.push(customiserUrl);
               themeData.push(domainUrl);
-              console.log(customiserUrl);
               addToExtension(themeData, themeCount, themes);
               themeCount++;
             });
             previewLink[0].addEventListener('contextmenu', e => {
               themeData.push(e.currentTarget.getAttribute('href'));
-              console.log('CONTEXT !!!!!');
               addToExtension(themeData, themeCount, themes);
               themeCount++;
             });
@@ -3237,8 +3225,6 @@ function checkIframeLoaded() {
       }
       return;
     }
-    // }
-
     function addToExtension(theme, themeCount, themeArr) {
       // Get currently locally stored themes.
       chrome.storage.local.get(["themes"]).then(result => {
@@ -3247,10 +3233,7 @@ function checkIframeLoaded() {
           previewLink: theme[1],
           customiserLink: theme[2],
           storeDomain: theme[3]
-          // TODO: Take the 'theme' var, take the preview theme id and assemble it to customiser url.
-          // customiserLink: linksSelect[1].getAttribute('href')
         };
-
         let combinedThemeArray;
         let storedThemes = [];
         if (result.themes) {
@@ -3280,7 +3263,6 @@ function checkIframeLoaded() {
 window.addEventListener("load", () => {
   checkIframeLoaded();
 });
-console.log('here');
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
@@ -5664,7 +5646,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("6dd0e0b306b9e035ba3b")
+/******/ 		__webpack_require__.h = () => ("dc8bf710d10a053ede93")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
