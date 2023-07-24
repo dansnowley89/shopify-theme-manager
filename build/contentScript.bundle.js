@@ -3174,6 +3174,8 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
 
 function checkIframeLoaded() {
+  console.log('checkiframeloaded...');
+
   // Get a handle to the iframe element
   var iframeContainer = document.getElementById('AppFrameMain');
   const iframe = iframeContainer && iframeContainer.querySelectorAll('iframe');
@@ -5646,7 +5648,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("dc8bf710d10a053ede93")
+/******/ 		__webpack_require__.h = () => ("af9aa4d958e9c023ee0f")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

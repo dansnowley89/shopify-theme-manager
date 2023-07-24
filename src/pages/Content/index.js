@@ -3,6 +3,9 @@
 // Options Page - 2 query selectors for dropdown menu & preview link (incase shopify should update these).
 
 function checkIframeLoaded() {
+
+  console.log('checkiframeloaded...');
+
   // Get a handle to the iframe element
   var iframeContainer = document.getElementById('AppFrameMain');
 

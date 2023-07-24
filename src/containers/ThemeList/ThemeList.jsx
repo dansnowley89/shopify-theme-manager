@@ -11,14 +11,21 @@ class ThemeList extends Component {
   getStoredThemes() {
     chrome.storage.local.get(["themes"]).then((result) => {
       console.log(result);
-      console.log("Value currently is " + result.themes);
 
-      console.log('getStoredthemes');
-      console.log([...result.themes]);
+      console.log(Object.keys(result).length);
+      // console.log("Value currently is " + result.themes);
+
+      // console.log('getStoredthemes');
+      // console.log([...result.themes]);
+      let themes = [];
+
+      if (Object.keys(result).length > 0) {
+        themes = [...result.themes];
+      }
 
       this.setState({
         name: 'new name!',
-        themes: [...result.themes]
+        themes: themes
       });
     });
   }
