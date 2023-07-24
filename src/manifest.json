@@ -25,7 +25,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.myshopify.com/*"
+        "https://*.shopifyapps.com/*"
       ],
       "all_frames": true,
       "js": [
