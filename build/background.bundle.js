@@ -3171,6 +3171,15 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 console.log('This is the background page.');
 console.log('Put the background scripts here.');
+chrome.tabs.query({
+  active: true,
+  currentWindow: true
+}, function (tabs) {
+  var tab = tabs[0];
+  var url = tab.url;
+  console.log(tabs);
+  console.log(url);
+});
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
@@ -5554,7 +5563,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("d12e76410b496a9f52d2")
+/******/ 		__webpack_require__.h = () => ("f445dbb6d2c1be3dae2a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

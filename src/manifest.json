@@ -7,7 +7,9 @@
   "description": "An extension to show the most recent themes that have been previewed.",
   "options_page": "options.html",
   "permissions": [
-    "storage"
+    "<all_urls>",
+    "storage",
+    "tabs"
   ],
   "background": {
     "service_worker": "background.bundle.js"
@@ -25,7 +27,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.shopifyapps.com/*"
+        "http://*/*",
+        "https://*/*"
       ],
       "all_frames": true,
       "js": [
