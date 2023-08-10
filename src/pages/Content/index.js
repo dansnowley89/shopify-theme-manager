@@ -1,7 +1,5 @@
 // TODO: 
 // 1. Testing
-// 2. check to see if the theme already exists in tab - if it is remove previous one.
-
 
 init();
 
@@ -14,10 +12,6 @@ function init() {
     if (typeof content === 'string') {
 
       if (/Shopify\.shop\s*=/.test(content)) {
-        console.log(content);
-
-        // eval(content)
-
         const jsonString = content;
 
         // Regular expression to match JSON objects from contents of script tag.
@@ -26,17 +20,14 @@ function init() {
 
         if (objectsArray) {
           const parsedObjects = objectsArray.map(objectString => JSON.parse(objectString));
-          console.log(parsedObjects);
 
-          console.log(parsedObjects.filter((item) => item.id));
           const theme = parsedObjects.filter((item) => item.id)[0]
-
           const hostDomain = `https://${window.location.host}`;
           const customiserUrl = `${hostDomain}/admin/themes/${theme.id}/editor`;
           const previewUrl = `${hostDomain}/?preview_theme_id=${theme.id}`;
           const themeData = [theme.name, previewUrl, customiserUrl, hostDomain];
 
-          addToExtension(themeData, 0, [])
+          addToExtension(themeData, 0)
 
         } else {
           console.log("No objects found in the string.");
@@ -48,7 +39,8 @@ function init() {
   }
 }
 
-function addToExtension(theme, themeCount, themeArr) {
+function addToExtension(theme, themeCount) {
+  const themeArr = [];
   // Get currently locally stored themes.
   chrome.storage.local.get(["themes"]).then((result) => {
     themeArr[themeCount] = {
@@ -62,6 +54,16 @@ function addToExtension(theme, themeCount, themeArr) {
     let storedThemes = [];
 
     if (result.themes) {
+      // Clear any identical themes
+      let i = 0;
+      for (const theme of result.themes) {
+        if (theme.previewLink === themeArr[themeCount].previewLink) {
+          result.themes.splice(i, 1);
+        }
+
+        i++;
+      }
+
       storedThemes = result.themes;
     }
 

@@ -3171,7 +3171,6 @@ __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/r
 
 // TODO: 
 // 1. Testing
-// 2. check to see if the theme already exists in tab - if it is remove previous one.
 
 init();
 function init() {
@@ -3181,10 +3180,6 @@ function init() {
     const content = scripts[i].textContent;
     if (typeof content === 'string') {
       if (/Shopify\.shop\s*=/.test(content)) {
-        console.log(content);
-
-        // eval(content)
-
         const jsonString = content;
 
         // Regular expression to match JSON objects from contents of script tag.
@@ -3192,14 +3187,12 @@ function init() {
         const objectsArray = jsonString.match(regex);
         if (objectsArray) {
           const parsedObjects = objectsArray.map(objectString => JSON.parse(objectString));
-          console.log(parsedObjects);
-          console.log(parsedObjects.filter(item => item.id));
           const theme = parsedObjects.filter(item => item.id)[0];
           const hostDomain = `https://${window.location.host}`;
           const customiserUrl = `${hostDomain}/admin/themes/${theme.id}/editor`;
           const previewUrl = `${hostDomain}/?preview_theme_id=${theme.id}`;
           const themeData = [theme.name, previewUrl, customiserUrl, hostDomain];
-          addToExtension(themeData, 0, []);
+          addToExtension(themeData, 0);
         } else {
           console.log("No objects found in the string.");
         }
@@ -3208,7 +3201,8 @@ function init() {
     }
   }
 }
-function addToExtension(theme, themeCount, themeArr) {
+function addToExtension(theme, themeCount) {
+  const themeArr = [];
   // Get currently locally stored themes.
   chrome.storage.local.get(["themes"]).then(result => {
     themeArr[themeCount] = {
@@ -3220,6 +3214,14 @@ function addToExtension(theme, themeCount, themeArr) {
     let combinedThemeArray;
     let storedThemes = [];
     if (result.themes) {
+      // Clear any identical themes
+      let i = 0;
+      for (const theme of result.themes) {
+        if (theme.previewLink === themeArr[themeCount].previewLink) {
+          result.themes.splice(i, 1);
+        }
+        i++;
+      }
       storedThemes = result.themes;
     }
     combinedThemeArray = [themeArr[themeCount], ...storedThemes];
@@ -5621,7 +5623,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f445dbb6d2c1be3dae2a")
+/******/ 		__webpack_require__.h = () => ("1e1ef7ba194b3d856f91")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

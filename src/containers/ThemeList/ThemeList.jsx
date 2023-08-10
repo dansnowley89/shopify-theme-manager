@@ -10,13 +10,6 @@ class ThemeList extends Component {
 
   getStoredThemes() {
     chrome.storage.local.get(["themes"]).then((result) => {
-      console.log(result);
-
-      console.log(Object.keys(result).length);
-      // console.log("Value currently is " + result.themes);
-
-      // console.log('getStoredthemes');
-      // console.log([...result.themes]);
       let themes = [];
 
       if (Object.keys(result).length > 0) {

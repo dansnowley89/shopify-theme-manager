@@ -36846,12 +36846,6 @@ class ThemeList extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
   };
   getStoredThemes() {
     chrome.storage.local.get(["themes"]).then(result => {
-      console.log(result);
-      console.log(Object.keys(result).length);
-      // console.log("Value currently is " + result.themes);
-
-      // console.log('getStoredthemes');
-      // console.log([...result.themes]);
       let themes = [];
       if (Object.keys(result).length > 0) {
         themes = [...result.themes];
@@ -40391,7 +40385,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("f445dbb6d2c1be3dae2a")
+/******/ 		__webpack_require__.h = () => ("1e1ef7ba194b3d856f91")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
