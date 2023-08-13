@@ -3169,17 +3169,19 @@ if (false) {} else {
 /* provided dependency */ var __react_refresh_utils__ = __webpack_require__(/*! ./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js */ "./node_modules/@pmmmwh/react-refresh-webpack-plugin/lib/runtime/RefreshUtils.js");
 __webpack_require__.$Refresh$.runtime = __webpack_require__(/*! ./node_modules/react-refresh/runtime.js */ "./node_modules/react-refresh/runtime.js");
 
-console.log('This is the background page.');
-console.log('Put the background scripts here.');
-chrome.tabs.query({
-  active: true,
-  currentWindow: true
-}, function (tabs) {
-  var tab = tabs[0];
-  var url = tab.url;
-  console.log(tabs);
-  console.log(url);
-});
+// console.log('This is the background page.');
+// console.log('Put the background scripts here.');
+
+// chrome.tabs.query({
+//   active: true,
+//   currentWindow: true
+// }, function (tabs) {
+//   var tab = tabs[0];
+//   var url = tab.url;
+
+//   console.log(tabs);
+//   console.log(url);
+// });
 
 const $ReactRefreshModuleId$ = __webpack_require__.$Refresh$.moduleId;
 const $ReactRefreshCurrentExports$ = __react_refresh_utils__.getModuleExports(
@@ -5563,7 +5565,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1e1ef7ba194b3d856f91")
+/******/ 		__webpack_require__.h = () => ("3ba6ece7686d5846c219")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
