@@ -3190,8 +3190,9 @@ function init() {
           const theme = parsedObjects.filter(item => item.id)[0];
           const hostDomain = `https://${window.location.host}`;
           const customiserUrl = `${hostDomain}/admin/themes/${theme.id}/editor`;
+          const codeUrl = `${hostDomain}/admin/themes/${theme.id}`;
           const previewUrl = `${hostDomain}/?preview_theme_id=${theme.id}`;
-          const themeData = [theme.name, previewUrl, customiserUrl, hostDomain];
+          const themeData = [theme.name, previewUrl, codeUrl, customiserUrl, hostDomain];
           addToExtension(themeData, 0);
         } else {
           console.log("No objects found in the string.");
@@ -3208,8 +3209,9 @@ function addToExtension(theme, themeCount) {
     themeArr[themeCount] = {
       themeHeading: theme[0],
       previewLink: theme[1],
-      customiserLink: theme[2],
-      storeDomain: theme[3]
+      codeLink: theme[2],
+      customiserLink: theme[3],
+      storeDomain: theme[4]
     };
     let combinedThemeArray;
     let storedThemes = [];
@@ -5623,7 +5625,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("3ba6ece7686d5846c219")
+/******/ 		__webpack_require__.h = () => ("d9d20cb95a20e07ea30a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

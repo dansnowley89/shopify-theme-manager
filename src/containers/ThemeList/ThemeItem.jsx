@@ -12,6 +12,7 @@ class ThemeItem extends Component {
               <p class="text font-semibold leading-6 text-gray-900">Theme:{this.props.itemData.themeHeading}</p>
               <p class="mt-1 truncate text-xs leading-5 text-gray-500">
                 <a target="_blank" href={this.props.itemData.previewLink} rel="noreferrer">Preview</a>&nbsp;|&nbsp;
+                <a target="_blank" href={this.props.itemData.codeLink} rel="noreferrer">Code</a>&nbsp;|&nbsp;
                 <a target="_blank" href={this.props.itemData.customiserLink} rel="noreferrer">Customiser</a>
               </p>
               <p class="mt-1 truncate text-xs leading-5 text-gray-500">

@@ -36778,6 +36778,10 @@ class ThemeItem extends react__WEBPACK_IMPORTED_MODULE_0__.Component {
       rel: "noreferrer"
     }, "Preview"), "\xA0|\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       target: "_blank",
+      href: this.props.itemData.codeLink,
+      rel: "noreferrer"
+    }, "Code"), "\xA0|\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      target: "_blank",
       href: this.props.itemData.customiserLink,
       rel: "noreferrer"
     }, "Customiser")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
@@ -40385,7 +40389,7 @@ if (true) {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("3ba6ece7686d5846c219")
+/******/ 		__webpack_require__.h = () => ("d9d20cb95a20e07ea30a")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
