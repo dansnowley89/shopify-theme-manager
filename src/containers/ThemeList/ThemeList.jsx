@@ -3,6 +3,11 @@ import ThemeItem from '../../containers/ThemeList/ThemeItem';
 
 class ThemeList extends Component {
 
+  constructor(props) {
+    super(props);
+    this.clearItem = this.clearItem.bind(this);
+  }
+
   state = {
     name: 'dev',
     themes: []
@@ -30,7 +35,13 @@ class ThemeList extends Component {
         console.error(error);
       }
     });
-    // chrome.storage.sync.clear(); // callback is optional
+  }
+
+  clearItem(arrayKey) {
+    chrome.storage.local.get(["themes"], function (items) {
+      items.themes.splice(arrayKey, 1);
+      chrome.storage.local.set(items);
+    });
   }
 
   componentDidMount() {
@@ -46,7 +57,7 @@ class ThemeList extends Component {
       <div>
         {/* <h1>{this.state.themes.length}</h1> Number of themes captured */}
         <ul className="divide-y divide-gray-100">
-          {this.state.themes.length > 0 && this.state.themes.map((itemData, i) => <ThemeItem key={i} itemData={itemData} />)}
+          {this.state.themes.length > 0 && this.state.themes.map((itemData, i) => <ThemeItem key={i} keyNo={i} itemData={itemData} clearItem={this.clearItem} />)}
         </ul>
 
         <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r mt-4" onClick={this.clearStorage}>Clear Storage</button>
