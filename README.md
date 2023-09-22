@@ -14,3 +14,8 @@ One of the early principles of this extension has been to only read from the DOM
 [] Text box for useful messaging to AMs/PMs. Ie. "Please checkout the latest theme features from this url: *theme_url*"
 [] Update name?
 [] Update icon
+
+
+## Installation
+
+Until this becomes available on the extension store you will need to enable dev mode on your browser's extension window and then hit "Load unpacked" (or similar) and load the **build** folder.
